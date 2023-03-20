@@ -5,11 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- custom font -->
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Dosis:wght@200&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap" rel="stylesheet">
+    
     <!-- end custom font -->
 
     <title>We walk to you</title>
@@ -17,7 +16,7 @@
     <!-- styles -->
     <style>
       body {
-        font-family: "Dosis", sans-serif;
+        font-family: 'Homemade Apple', cursive;
         margin: 2em;
         background-color: #f9d0ae
           ;
@@ -28,7 +27,7 @@
         color: #fff;
       }
       #poem > div {
-        height: 1.2em;
+        height: 1.6em;
       }
       .indent {
         padding-left: 1em;
@@ -40,9 +39,9 @@
     <div id="poem"></div>
     <script>
       // set up the lists of words
-      const subjects = "cold,sun,leaves,wool".split(","),
-        verbs = "shine,amble,laugh,sip,fall,whisper".split(","),
-        objects = "me,you,grassy,trees,teacup".split(",");
+      const subjects = "cold,sun,leaves,wool,mountains,hands,scones".split(","),
+        verbs = "become,amble,laugh,sip,warm,sing,shine,drive".split(","),
+        objects = "me,you,grassy,trees,teacups,camera,the breeze,our rosy cheeks,".split(",");
       // set up the counter
       let counter = 0;
 
@@ -60,7 +59,7 @@
         }
         const text =
           getRandomFromList(subjects) +
-          " " +
+          "  " +
           getRandomFromList(verbs) +
           "  " +
           getRandomFromList(objects);
@@ -84,9 +83,9 @@
       // implement the rules of the poem
       function processPoem() {
         counter++;
-        if (counter % 5 === 0) {
+        if (counter % 4 === 0) {
           addBlankLine();
-        } else if (counter % 5 === 2 || counter % 5 === 4) {
+        } else if (counter % 5 === 1 || counter % 5 === 4) {
           // if the second or fourth line add the line with an indent
           addLine(true);
         } else {
